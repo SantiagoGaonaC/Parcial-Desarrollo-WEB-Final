@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/SantiagoGaonaC/Parcial-Desarrollo-WEB-Final#readme",
   "dependencies": {
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
     "sqlite3": "^5.1.2"
   }
