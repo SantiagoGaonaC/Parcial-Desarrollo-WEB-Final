@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 //requerir la conexión SQLITE3
-//const db = require("./db");
+const db = require("./data/db.js");
 
 //setear motor de plantillas
 app.set("view engine", "ejs");
