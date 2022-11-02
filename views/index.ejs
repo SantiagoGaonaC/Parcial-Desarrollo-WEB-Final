@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("partials/header.ejs") %>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <% data.forEach(function(producto){ %>
+                <div class="card">
+                    <div class="card-body">
+                        <p>
+                            <%= producto.name %>
+                        </p>
+                        <img src="<%=producto.image%>.jpg" class="card-img-top">
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+    </div>
+</body>
+
+</html>
