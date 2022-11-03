@@ -9,9 +9,9 @@ const productosController = require("../controllers/productosController");
 //   res.render("index.ejs", {
 //     data
 //   });
-  
+
 // });
 
-router.get("/api", productosController.mostrar)
+router.get("/", productosController.mostrar);
 
 module.exports = router;
