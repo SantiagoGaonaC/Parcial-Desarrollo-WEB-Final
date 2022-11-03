@@ -1,0 +1,56 @@
+<div class="modal" id="popupCart">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title tituloModal">MI CARRITO</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <!-- PRODUCTO 1 -->
+                <div class="row">
+                    <div class="col-3">
+                        <!-- IMAGEN DEL PRODUCTO EN EL CARRITO-->
+                        <img src="" altname="aceite_clavo" height="100" width="100">
+                    </div>
+                    <div class="col-7">
+                        <!-- NOMBRE, CANTIDAD, Y CONTENIDO DEL PRODUCTO -->
+                        <p class="itemCarrito">ACEITE ESENCIAL DE CLAVO</p>
+                        <p class="itemCarrito">500ML</p>
+                        <p class="itemCarrito">Cantidad: <input type="number" min="1" step="1"
+                                class="form-control" id="amountInput" value="1"></p>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" class="btn-close float-end"></button>
+                        <p class="precioCarrito">7,99€</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col">
+                        <p class="precio" style="text-align: left;">TOTAL (IVA incluido)</p>
+                    </div>
+                    <div class="col">
+                        <p class="precioF">7,99 €</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <div class="row">
+                    <!-- LINK A LA PÁGINA DEL CARRITO -->
+                    <a href="IU01_Carrito.html" class="cartBtn" role="button">Ir al carrito</a>
+                </div>
+                <div class="row">
+                    <button type="button" class="cartBtn">Realizar pedido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
