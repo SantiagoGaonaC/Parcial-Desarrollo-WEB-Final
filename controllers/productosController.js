@@ -7,5 +7,5 @@ module.exports.mostrar = (req, res) => {
   res.render("index.ejs",{
     data
   });
-  //res.send(200, data);
+  //res.status(200).json(data);
 };
