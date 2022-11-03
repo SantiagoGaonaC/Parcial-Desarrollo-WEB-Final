@@ -21,7 +21,6 @@ app.use(express.static(__dirname + '/public/css'));
 app.use('/public/css', express.static(__dirname + '/public/css'));
 app.use('/static', express.static(__dirname + '/public/css'));
 
-
 //routes
 app.use(require("./routers/productos"));
 //404 handler
