@@ -131,6 +131,7 @@ code, kbd, pre, samp {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 10%;
     background-color: #e80729;
     color: white;
     width: 40px;
@@ -142,6 +143,7 @@ code, kbd, pre, samp {
   }
 
   .favoriteHeart {
+    margin-left: 30%;
     color: #ef2947;
     display: flex;
     justify-content: right;
@@ -273,4 +275,9 @@ input[type='text'] {
 .centerTitle {
   text-align: center;
   text-decoration: bold;
+}
+
+#block_container {
+  display: flex;
+  justify-content: center;
 }

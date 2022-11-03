@@ -7,22 +7,36 @@
 
 <body>
     <%- include("partials/top.ejs") %>
-    <div class="container">
-        <div class="row">
-            <% data.forEach(function(producto){ %>
-                <div class="card">
-                    <div class="card-body">
-                        <p>
-                            <%= producto.nombre %>
-                        </p>
-                        <p> ID PRODUCTO: <%= producto.id %>
-                        </p>
-                        <img src="<%=producto.image%>.jpg" class="card-img-top">
+        <div class="container">
+            <div class="row justify-content-center top-buffer">
+                <% data.forEach(function(producto){ %>
+                    <div class="col-md-2 p-3 m-4 cell text-center item"">
+                    <div id="block_container">
+                        <div class="sale">-<%= producto.descuento %>%</div>
+                        <div class=" favoriteHeart">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                            </svg>
+                        </div>
                     </div>
-                </div>
-                <% }) %>
+                    <img src="<%=producto.image%>.jpg" class="card-img-top">
+                    <p class="nombreProd">
+                        <%= producto.nombre %>
+                    </p>
+                    <p class="cantidadProd">
+                        <%= producto.monto %>
+                            <%= producto.unidad %>
+                    </p>
+                    <p class="precio">
+                        <%= producto.precio %> €
+                    </p>
+                    <%- include("partials/button.ejs") %>
+            </div>
+            <% }) %>
         </div>
-    </div>
+        </div>
 </body>
 
 </html>
