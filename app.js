@@ -12,9 +12,15 @@ app.set("view engine", "ejs");
 
 //formato JSON para creación y edición
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static("public"));
-//app.use(express.static(path.join(__dirname, "public")));
-app.use(express.static(path.join(__dirname, 'JSON')));
+
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "JSON")));
+
+//CSS static
+app.use(express.static(__dirname + '/public/css'));
+app.use('/public/css', express.static(__dirname + '/public/css'));
+app.use('/static', express.static(__dirname + '/public/css'));
+
 
 //routes
 app.use(require("./routers/productos"));
