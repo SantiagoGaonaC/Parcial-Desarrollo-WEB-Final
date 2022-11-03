@@ -1,0 +1,276 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background: #fcfcfc;
+    font-family: Arial, Helvetica, sans-serif;
+}
+code, kbd, pre, samp {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  button, input, optgroup, select, textarea {
+    font-family: inherit;
+  }
+  .tooltip {
+    font-family: sans-serif;
+  }
+  .popover {
+    font-family: sans-serif;
+  }
+  .text-monospace {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  a {
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .cell {
+    background: white;
+  }
+
+  .minSize {
+    min-width: 800px;
+  }
+
+  #example-search-input1 {
+    border-color: #5ccb5f;
+    color: #8f8f8f;
+  }
+
+  p {
+    margin:2px;
+    text-align: center;
+  }
+
+  .pLeft {
+    text-align: left;
+  }
+
+  .precio {
+    color:#5ccb5f;
+    font-weight: bold;
+    font-family: Helvetica;
+  }
+
+  .nombreProd {
+    font-family: Arial;
+    font-weight: bold;
+  }
+
+  .cantidadProd {
+    font-family: sans-serif;
+    color: #8f8f8f;
+    font-weight: bolder;
+    font-size: small;
+  }
+
+  .page-link {
+    color: #5ccb5f;
+    font-weight: bold;
+}
+
+  .page-link:hover {
+    color:#efa229;
+  }
+
+  .item {
+    transition: box-shadow .2s;
+  }
+
+  .item:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.1); 
+    transform: scale(1.2);
+  }
+
+  .item:hover .btn {
+    opacity: 1;
+    transition: .2s;
+  }
+
+  .item:hover .favoriteHeart {
+    opacity: 1;
+    transition: .2s;
+  }
+
+  .btn {
+    opacity: 0;
+    margin: 10px;
+    background-color: #efa229;
+    color: white;
+    border: 2px #efa229;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: smaller;
+  }
+  
+  .btn2 {
+    margin: 10px;
+    background-color: #efa229;
+    color: white;
+    border: 2px #efa229;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: smaller;
+    padding: 10px;
+    margin-left: 50px;
+  }
+
+  .btn:hover {
+    background-color: #5ccb5f;
+    color: black;
+  }
+
+  .btn2:hover {
+    background-color: #5ccb5f;
+    color: black;
+  }
+
+  .sale {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e80729;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border: 2px #e80729;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: smaller;
+  }
+
+  .favoriteHeart {
+    color: #ef2947;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    margin-right: 40px;
+    margin-top: 10px;
+    opacity: 0;
+  }
+
+  .top-buffer {
+    margin-top: 20px;
+  }
+
+  .btnLabel {
+    background-color: #fcfcfc;
+    border: none;
+    margin:2px;
+    text-align: center;
+  }
+
+.modal-footer {
+  display: block;
+}
+
+.tituloModal {
+  font-family: sans-serif;
+  color: #5ccb5f;
+}
+
+.cartBtn {
+  font-family: sans-serif;
+  margin: 5px;
+  padding: 12px;
+  font-weight: bold;
+  background-color: #5ccb5f;
+  color:white;
+  border: 2px #5ccb5f;
+  border-radius: 20px;
+}
+
+.cartBtn:hover {
+  background-color: #efa229;
+  color: black;
+}
+
+.itemCarrito {
+  text-align: left;
+  font-family: Helvetica;
+  font-size: small;
+}
+
+.precioCarrito {
+  margin-top: 45px;
+  font-family: Helvetica;
+}
+
+#amountInput {
+  font-family: Helvetica;
+  font-size: small;
+}
+
+input[type='number'] {
+  color:#5ccb5f;
+  width: 80px;
+}
+
+.form-control {
+  display: inline;
+}
+
+.modal-body {
+  padding-right: 40px;
+}
+
+.precioF {
+  color:black;
+  font-weight: bold;
+  font-family: Helvetica;
+  text-align: right;
+}
+
+.dropdown-item {
+  font-family: Helvetica;
+}
+
+.dropdown-item:hover {
+  background-color: #efa229;
+  color: white;
+}
+
+.flexB {
+  display: flex;
+  flex-direction: row;
+}
+
+.signIn {
+  background-color: white;
+  min-width: 500px;
+  max-width: 500px;
+  min-height: 280px;
+  max-height: 280px;
+  margin-bottom: 70px;
+  padding: 30px;
+}
+
+input[type='text'] {
+  width: 400px;
+}
+
+.helveticaBold {
+  font-style: Helvetica;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 30px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.signUp {
+  background-color: white;
+  min-width: 500px;
+  max-width: 500px;
+  min-height: 620px;
+  max-height: 620px;
+  margin-bottom: 70px;
+  padding: 30px;
+}
+
+.centerTitle {
+  text-align: center;
+  text-decoration: bold;
+}

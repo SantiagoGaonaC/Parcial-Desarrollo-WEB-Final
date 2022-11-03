@@ -1,0 +1,75 @@
+<div class="row my-2">
+    <div class="col-md-5">
+        <img src="src-eco-store/logo.jpg" alt="logo" width="250" height="85" style="border-radius: 10px;">
+    </div>
+    <div class="col-md-4 p-1 mt-4">
+        <div class="input-group">
+            <input class="form-control rounded-pill py-2 pr-5 mr-1 bg-transparent" type="search"
+                value="¿Qué producto estás buscando?..." id="example-search-input1">
+            <span class="input-group-append">
+                <div class="input-group-text border-0 bg-transparent ml-n5"><i class="fa fa-search"></i></div>
+            </span>
+        </div>
+    </div>
+    <div class="col-md-1 p-2 mt-3 text-center">
+        <p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#5ccb5f" class="bi bi-heart"
+                viewBox="0 0 16 16">
+                <path
+                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+            </svg>
+            <br>
+            Mis Favoritos
+        </p>
+    </div>
+    <div class="col-md-1 p-2 mt-3 text-center">
+        <button type="button" class="btnLabel" id="dropdownCuenta" data-bs-toggle="dropdown" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#5ccb5f" class="bi bi-person-circle"
+                viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+            </svg>
+            <br>
+            Mi Cuenta
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownCuenta">
+            <li><a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    </svg> Mi Cuenta</a></li>
+            <li><a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                        <path
+                            d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                    </svg> Mis Favoritos</a></li>
+            <li><a class="dropdown-item" href="IU01_Carrito.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+                        <path
+                            d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                    </svg> Mi Carrito</a></li>
+            <li><a class="dropdown-item" href="IU01_InicioSesion.html"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+                        <path
+                            d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
+                    </svg> Entrar</a></li>
+            <li><a class="dropdown-item" href="IU01_Registro.html"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                        <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        <path fill-rule="evenodd"
+                            d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+                    </svg> Crear una cuenta</a></li>
+        </ul>
+    </div>
+    <div class="col-md-1 p-2 mt-3 text-center">
+        <button type="button" class="btnLabel" data-bs-toggle="modal" data-bs-target="#popupCart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#5ccb5f" class="bi bi-basket3"
+                viewBox="0 0 16 16">
+                <path
+                    d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM3.394 15l-1.48-6h-.97l1.525 6.426a.75.75 0 0 0 .729.574h9.606a.75.75 0 0 0 .73-.574L15.056 9h-.972l-1.479 6h-9.21z" />
+            </svg>
+            <br>
+            Mi Carrito
+        </button>
+    </div>
+</div>
