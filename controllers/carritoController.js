@@ -17,10 +17,12 @@ module.exports.añadirCarrito = (req, res) => {
 };
 
 module.exports.mostrar = (req, res) => {
-  /*   res.render("index.ejs", {
-    carrito
-  }); */
-  res.status(200).json(carrito);
+  res.render("carrito.ejs", {
+    data,
+    carrito,
+    total
+  });
+  //res.status(200).json(carrito);
 };
 
 module.exports.borrar = (req, res) => {
