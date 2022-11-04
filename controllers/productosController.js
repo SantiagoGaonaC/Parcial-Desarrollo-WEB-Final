@@ -1,4 +1,4 @@
-let carrito = require("./carritoController");
+global.carrito = require("./carritoController");
 
 const fs = require("fs");
 const json_data = fs.readFileSync("JSON/data.json", "utf-8");

@@ -1,7 +1,7 @@
 const fs = require("fs");
 const json_data = fs.readFileSync("JSON/data.json", "utf-8");
 const data = JSON.parse(json_data);
-let carrito = [];
+global.carrito = [];
 
 module.exports = carrito;
 
