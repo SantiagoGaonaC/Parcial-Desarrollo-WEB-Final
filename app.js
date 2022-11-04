@@ -23,6 +23,7 @@ app.use("/public/css", express.static(__dirname + "/public/css"));
 //routes
 app.use(require("./routers/productos"));
 app.use(require("./routers/carrito"));
+app.use(require("./routers/register"));
 //404 handler
 app.use((req, res, next) => {
   res.status(404).send("404 Not Found");

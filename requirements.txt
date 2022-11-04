@@ -1,0 +1,4 @@
+jsonwebtoken
+bcryptjs
+sqlite
+sqlite3
