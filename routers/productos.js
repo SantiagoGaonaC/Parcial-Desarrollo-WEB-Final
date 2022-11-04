@@ -3,15 +3,7 @@ const router = express.Router();
 
 const productosController = require("../controllers/productosController");
 
-//ruta obtener productos
-//router.get("/api", productoController.mostrar);
-// router.get("/api", (req, res) => {
-//   res.render("index.ejs", {
-//     data
-//   });
-
-// });
-
 router.get("/", productosController.mostrar);
+router.get("/carrito-producto-borrar/:id", productosController.borrar);
 
 module.exports = router;
