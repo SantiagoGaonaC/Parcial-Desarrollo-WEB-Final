@@ -17,6 +17,10 @@ module.exports.añadirCarrito = (req, res) => {
 };
 
 module.exports.mostrar = (req, res) => {
+  var total = carrito.reduce(function (_this, val) {
+    return _this + val.precio;
+  }, 0);
+  
   res.render("carrito.ejs", {
     data,
     carrito,
