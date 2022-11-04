@@ -14,36 +14,53 @@
                 </div>
             </div>
             <div class="row top-buffer justify-content-center">
-                <% carrito.forEach(function(producto){ %>
-                    <div class="col-md-2 top-buffer">
-                        <img src="<%= producto.image %>.jpg" width="150" height="150">
+                <div class="col-md-9">
+                    <% carrito.forEach(function(producto){ %>
+                        <div class="row justify-content-center">
+                            <div class="col-md top-buffer">
+                                <img src="<%= producto.image %>.jpg" width="150" height="150">
+                            </div>
+                            <div class="col-md top-buffer">
+                                <p class="nombreProd" style="text-align: left;">
+                                    <%= producto.nombre %>
+                                </p>
+                                <p class="cantidadProd" style="text-align: left;">
+                                    <%= producto.monto %>
+                                        <%= producto.unidad %>
+                                </p>
+                            </div>
+                            <div class="col-md top-buffer">
+                                <p class="itemCarrito top-buffer" style="font-weight: bold;">Cantidad <input
+                                        type="number" min="1" step="1" class="form-control" id="amountInput" value="1">
+                                </p>
+                            </div>
+                            <div class="col-md top-buffer">
+                                <p class="precioF top-buffer" style="text-align: center;">
+                                    <%= producto.precio %> €
+                                </p>
+                            </div>
+                            <div class="col-md top-buffer" style="padding-top: 17px;">
+                                <a href="/carrito-producto-borrar/<%= producto.id %>">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center" style="background-color: #f0ebe1">
+                        <h4 class="top-buffer" style="text-align: left;">Resumen de tu pedido:</h4>
+                        <p class="precioF top-buffer" style="text-align: left;">TOTAL: <%= total %> €</p>
+                        <button type="button" class="cartBtn" style="margin-top: 100px; text-align: center;">Realizar
+                            pedido</button>
+                        <p class="precio top-buffer" style="text-align: left; margin-bottom: 100px;">¿Quieres añadir
+                            más
+                            productos?</p>
                     </div>
-                    <div class="col-md-2 top-buffer">
-                        <p class="nombreProd" style="text-align: left;"><%= producto.nombre %></p>
-                        <p class="cantidadProd" style="text-align: left;"><%= producto.monto %> <%= producto.unidad %></p>
-                    </div>
-                    <div class="col-md-2 top-buffer">
-                        <p class="itemCarrito top-buffer" style="font-weight: bold;">Cantidad <input type="number" min="1"
-                                step="1" class="form-control" id="amountInput" value="1"></p>
-                    </div>
-                    <div class="col-md-1 top-buffer">
-                        <p class="precioF top-buffer" style="text-align: center;"><%= producto.precio %> €</p>
-                    </div>
-                    <div class="col-md-1 top-buffer" style="padding-top: 17px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-trash-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
-                        </svg>
-                    </div>
-                    <% }) %>
-                <div class="col-md-4 text-center" style="background-color: #f0ebe1">
-                    <h4 class="top-buffer" style="text-align: left;">Resumen de tu pedido:</h4>
-                    <p class="precioF top-buffer" style="text-align: left;">TOTAL: 7,99 €</p>
-                    <button type="button" class="cartBtn" style="margin-top: 100px; text-align: center;">Realizar
-                        pedido</button>
-                    <p class="precio top-buffer" style="text-align: left; margin-bottom: 100px;">¿Quieres añadir más
-                        productos?</p>
                 </div>
             </div>
         </div>
