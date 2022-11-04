@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("partials/header.ejs") %>
+</head>
+
+<body>
+    <%- include("partials/top.ejs") %>
+
+        <div class="container-sm top-buffer signUp">
+            <div class="row">
+                <p class="helveticaBold">Crear nueva cuenta</p>
+            </div>
+            <div class="row justify-content-center">
+                <input type="text" id="nameInput" class="form-control" placeholder="Nombre"
+                    style="font-family: Helvetica;" />
+            </div>
+            <div class="row justify-content-center top-buffer">
+                <input type="text" id="lastInput" class="form-control" placeholder="Apellidos"
+                    style="font-family: Helvetica;" />
+            </div>
+            <div class="row top-buffer">
+                <p class="helveticaBold">Información de inicio de sesión</p>
+            </div>
+            <div class="row justify-content-center">
+                <input type="text" id="emailInput" class="form-control" placeholder="Email"
+                    style="font-family: Helvetica;" />
+            </div>
+            <div class="row justify-content-center top-buffer">
+                <input type="text" id="passInput" class="form-control" placeholder="Contraseña"
+                    style="font-family: Helvetica;" />
+            </div>
+            <div class="row justify-content-center top-buffer">
+                <input type="text" id="passInput2" class="form-control" placeholder="Repetir contraseña"
+                    style="font-family: Helvetica;" />
+            </div>
+            <div class="row justify-content-center top-buffer">
+                <button type="button" class="btn2" style="margin-left: 0px; margin-top: 10px;">Crear cuenta</button>
+                <button type="button" class="btn2"
+                    style="margin-left: 0px; margin-top: 10px; background-color: #4267B2;">Accede con Facebook</button>
+            </div>
+        </div>
+
+        <%- include("partials/modalCart.ejs", {carrito:carrito,total:total}) %>
+</body>
+
+</html>
