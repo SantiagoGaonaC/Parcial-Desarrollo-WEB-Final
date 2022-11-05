@@ -7,30 +7,30 @@
 
 <body>
     <%- include("partials/top.ejs") %>
-
         <div class="container-sm top-buffer signIn">
-            <div class="row justify-content-center">
-                <input type="text" id="emailInput" class="form-control" placeholder="&#xf0e0; Email"
-                    style="font-family:Arial, FontAwesome" />
-            </div>
-            <div class="row justify-content-center top-buffer">
-                <input type="text" id="passInput" class="form-control" placeholder="&#xf023; Contraseña"
-                    style="font-family:Arial, FontAwesome" />
-            </div>
-            <div class="row">
-                <p class="precioF" style="font-size: small; padding-right: 30px; padding-top: 20px; color: gray;">¿Has
-                    olvidado tu contraseña?</p>
-            </div>
-            <div class="row justify-content-center">
-                <button type="button" class="btn2"
-                    style="display: inline; width: 200px; margin-left: 0px; margin-top: 40px;">Accede</button>
-                <button type="button" class="btn2"
-                    style="display: inline; width: 200px; margin-left: 0px; margin-top: 40px; background-color: #4267B2;">Accede
-                    con Facebook</button>
-            </div>
+            <form class="row needs-validation" novalidate id="formLogin" action="/login" method="POST">
+                <div class="row justify-content-center">
+                    <input type="text" id="email" name="email" class="form-control" placeholder="&#xf0e0; Email"
+                        style="font-family:Arial, FontAwesome" />
+                </div>
+                <div class="row justify-content-center top-buffer">
+                    <input type="text" id="password" name="password" class="form-control"
+                        placeholder="&#xf023; Contraseña" style="font-family:Arial, FontAwesome" />
+                </div>
+                <div class="row">
+                    <p class="precioF" style="font-size: small; padding-right: 30px; padding-top: 20px; color: gray;">
+                        ¿Has
+                        olvidado tu contraseña?</p>
+                </div>
+                <div class="row justify-content-center">
+                    <button type="submit" class="btn2"
+                        style="display: inline; width: 200px; margin-left: 0px; margin-top: 40px;">Accede</button>
+                    <button type="button" class="btn2"
+                        style="display: inline; width: 200px; margin-left: 0px; margin-top: 40px; background-color: #4267B2;">Accede
+                        con Facebook</button>
+                </div>
+            </form>
         </div>
-
-        <%- include("partials/modalCart.ejs", {carrito:carrito,total:total}) %>
 </body>
 
 </html>

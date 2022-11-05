@@ -2,3 +2,5 @@ jsonwebtoken
 bcryptjs
 sqlite
 sqlite3
+cookie-parser
+dotenv

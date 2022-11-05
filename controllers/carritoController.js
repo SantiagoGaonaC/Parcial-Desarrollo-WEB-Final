@@ -20,18 +20,19 @@ module.exports.mostrar = (req, res) => {
   var total = carrito.reduce(function (_this, val) {
     return _this + val.precio;
   }, 0);
-  
+
   res.render("carrito.ejs", {
     data,
     carrito,
-    total
+    total,
+    usuarios: req.usuarios
   });
   //res.status(200).json(carrito);
 };
 
 module.exports.borrar = (req, res) => {
   const id = req.params.id;
-  carrito = carrito.filter(producto => producto.id != id); //todos los datos serán agregados excepto el que cumple
+  carrito = carrito.filter((producto) => producto.id != id); //todos los datos serán agregados excepto el que cumple
   res.redirect("/");
   //res.send(200, data);
 };

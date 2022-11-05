@@ -10,6 +10,14 @@ app.set("views", path.join(__dirname, "views"));
 //setear motor de plantillas
 app.set("view engine", "ejs");
 
+/*Llamado a dontenv*/
+const dontenv = require("dotenv");
+dontenv.config({ path: "./env/.env" });
+
+/*Llamado cookie-parser*/
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
+
 //formato JSON para creación y edición
 app.use(express.urlencoded({ extended: false }));
 
@@ -24,6 +32,8 @@ app.use("/public/css", express.static(__dirname + "/public/css"));
 app.use(require("./routers/productos"));
 app.use(require("./routers/carrito"));
 app.use(require("./routers/register"));
+app.use(require("./routers/pedido"));
+
 //404 handler
 app.use((req, res, next) => {
   res.status(404).send("404 Not Found");

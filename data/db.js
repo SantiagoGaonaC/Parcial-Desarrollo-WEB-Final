@@ -26,7 +26,6 @@ CREATE TABLE IF NOT EXISTS pedidos (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   comprador INTEGER REFERENCES usuarios (id),
   products TEXT NOT NULL,
-  subtotal FLOAT NOT NULL,
   total FLOAT NOT NULL
 );`
 

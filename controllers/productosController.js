@@ -20,7 +20,7 @@ module.exports.mostrar = (req, res) => {
 
 module.exports.borrar = (req, res) => {
   const id = req.params.id;
-  carrito = carrito.filter(producto => producto.id != id); //todos los datos serán agregados excepto el que cumple
+  carrito = carrito.filter((producto) => producto.id != id); //todos los datos serán agregados excepto el que cumple
   res.redirect("/");
   //res.send(200, data);
 };

@@ -1,7 +1,9 @@
 const jwt = require("jsonwebtoken");
 const bcryptjs = require("bcryptjs");
 const db = require("../data/db");
+const { promisify } = require("util");
 
+//REGISTER
 module.exports.mostrar = (req, res) => {
   res.render("registro.ejs");
   //res.status(200).json(carrito);
@@ -62,4 +64,106 @@ exports.register = async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+};
+
+//LOGIN
+module.exports.mostrarLogin = (req, res) => {
+  res.render("login.ejs");
+  //res.status(200).json(carrito);
+};
+
+module.exports.login = async (req, res) => {
+  try {
+    const email = req.body.email;
+    const password = req.body.password;
+    console.log(email, password);
+    if (!email || !password) {
+      res.render("/entrar");
+    } else {
+      db.all(
+        "SELECT * FROM usuarios WHERE email = ?",
+        [email],
+        async (error, results) => {
+          //usamos bcrypt de nuevo
+          if (
+            results.length == 0 ||
+            !(await bcryptjs.compare(password, results[0].contraseña))
+          ) {
+            //si no coincide la pass
+            res.redirect("/", console.log("No pass..."));
+          } else {
+            //inicio de sesion OK
+            //JWT Json web token
+
+            db.all(
+              "SELECT id FROM usuarios WHERE email = ?",
+              [email],
+              function (error, results, fields) {
+                if (error) {
+                  console.log("Error 1: " + error);
+                  return;
+                }
+                const rows = JSON.parse(JSON.stringify(results[0]));
+                const id = rows[Object.keys(rows)];
+
+                // here you can access rows
+                console.log("ID:", id);
+                //conexion.query('UPDATE sesiones SET fecha_sesion=NOW() WHERE usuarios_idusuario = ?', [id]);
+                // const id = results[0].id
+                const token = jwt.sign({ id: id }, process.env.JWT_SECRETO, {
+                  expiresIn: process.env.JWT_TIEMPO_EXPIRA
+                });
+
+                //config de cookies
+                const opcionesCookies = {
+                  expires: new Date(
+                    Date.now() +
+                      process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000
+                  ),
+                  httpOnly: true
+                };
+                res.cookie("jwt", token, opcionesCookies); //nombre de la cookie
+                res.redirect("/");
+              }
+            );
+          }
+        }
+      );
+    }
+  } catch (error) {
+    console.log("Error 2" + error);
+  }
+};
+
+exports.Authenticated = async (req, res, next) => {
+  if (req.cookies.jwt) {
+    try {
+      const decodificada = await promisify(jwt.verify)(
+        req.cookies.jwt,
+        process.env.JWT_SECRETO
+      );
+      db.all(
+        "SELECT * FROM usuarios WHERE id = ?",
+        [decodificada.id],
+        (error, results) => {
+          if (!results) {
+            return next();
+          }
+          req.usuarios = results[0];
+          return next();
+        }
+      );
+    } catch (error) {
+      console.log(error);
+      return next();
+    }
+  } else {
+    res.redirect("/");
+  }
+};
+
+exports.logout = (req, res) => {
+  res.clearCookie("jwt");
+  res.clearCookie("jwtAdmin");
+  return res.redirect("/");
 };
