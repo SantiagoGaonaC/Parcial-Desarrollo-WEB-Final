@@ -33,6 +33,7 @@ app.use(require("./routers/productos"));
 app.use(require("./routers/carrito"));
 app.use(require("./routers/register"));
 app.use(require("./routers/pedido"));
+app.use(require("./routers/favorito"));
 
 //404 handler
 app.use((req, res, next) => {

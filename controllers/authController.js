@@ -78,7 +78,7 @@ module.exports.login = async (req, res) => {
     const password = req.body.password;
     console.log(email, password);
     if (!email || !password) {
-      res.render("/entrar");
+      res.redirect("/");
     } else {
       db.all(
         "SELECT * FROM usuarios WHERE email = ?",
