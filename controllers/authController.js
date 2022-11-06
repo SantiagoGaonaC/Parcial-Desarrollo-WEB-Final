@@ -105,11 +105,6 @@ module.exports.login = async (req, res) => {
                 }
                 const rows = JSON.parse(JSON.stringify(results[0]));
                 const id = rows[Object.keys(rows)];
-
-                // here you can access rows
-                console.log("ID:", id);
-                //conexion.query('UPDATE sesiones SET fecha_sesion=NOW() WHERE usuarios_idusuario = ?', [id]);
-                // const id = results[0].id
                 const token = jwt.sign({ id: id }, process.env.JWT_SECRETO, {
                   expiresIn: process.env.JWT_TIEMPO_EXPIRA
                 });
@@ -158,6 +153,7 @@ exports.Authenticated = async (req, res, next) => {
       return next();
     }
   } else {
+    console.log("Necesita iniciar sesión...");
     res.redirect("/");
   }
 };
