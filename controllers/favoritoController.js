@@ -9,23 +9,24 @@ module.exports.registrarPedido = (req, res) => {
   const idProducto = req.params.id;
   let comprador = req.usuarios;
   console.log(idProducto, comprador.id);
-
   db.all(
-    "SELECT favoritos FROM usuarios WHERE favoritos = ? and id = ?",
+    "SELECT * FROM favoritos WHERE favorito = ? and usuario = ?",
     [idProducto, comprador.id],
     (error, results) => {
       if (error) {
         console.log("Error en BD favoritos: " + error);
         res.redirect("/");
       } else if (results[0] == undefined) {
-        console.log("No existe favorito");
-        //ENTONCES CREAR EL FAV INSERTAR
-
+        db.all("INSERT INTO favoritos (usuario, favorito) VALUES (?,?)", [
+          comprador.id,
+          idProducto
+        ]);
         res.redirect("/");
       } else {
-        console.log("Existe favorito");
-        //ENTONCES BORRAR EL FAV
-        
+        db.all("DELETE FROM favoritos WHERE favorito = ? and usuario = ?", [
+          idProducto,
+          comprador.id
+        ]);
         res.redirect("/");
       }
       /*
@@ -36,13 +37,4 @@ module.exports.registrarPedido = (req, res) => {
       */
     }
   );
-
-  /*
-  IF (existe el id del producto ya para el usuario X?) => no hacer nada (BORRAR??)
-  ELSE (
-    INSERTAR EN DB 
-  FAV CORRESPONDIENTE AL USUARIO X
-  ) 
-  */
-  res.redirect("/");
 };
