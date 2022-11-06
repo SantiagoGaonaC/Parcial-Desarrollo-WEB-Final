@@ -17,8 +17,7 @@ const sql_usuarios = `CREATE TABLE IF NOT EXISTS usuarios (
   email TEXT NOT NULL UNIQUE,
   nombre TEXT NOT NULL,
   apellido TEXT NOT NULL,
-  contraseña TEXT NOT NULL,
-  favoritos INTEGER
+  contraseña TEXT NOT NULL
 );`
 
 const sql_pedidos = `
@@ -27,6 +26,13 @@ CREATE TABLE IF NOT EXISTS pedidos (
   comprador INTEGER REFERENCES usuarios (id),
   products TEXT NOT NULL,
   total FLOAT NOT NULL
+);`
+
+const sql_favoritos = `
+CREATE TABLE IF NOT EXISTS favoritos (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  usuario INTEGER REFERENCES usuarios (id),
+  favorito INTEGER NOT NULL
 );`
 
 
@@ -43,6 +49,13 @@ db.serialize(() => {
       return console.error(error.message);
     }else{
       console.log("Tabla PEDIDOS creada correctamente")
+    }
+  });
+  db.run(sql_favoritos,error=>{
+    if(error){
+      return console.error(error.message);
+    }else{
+      console.log("Tabla FAVORITOS creada correctamente")
     }
   });
 });
