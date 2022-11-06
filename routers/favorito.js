@@ -10,4 +10,10 @@ router.get(
   favoritoController.registrarPedido
 );
 
+router.get(
+  "/favoritos",
+  authController.Authenticated,
+  favoritoController.mostrarFavoritos
+);
+
 module.exports = router;
