@@ -13,7 +13,31 @@
 
 <body>
     <%- include("partials/top.ejs") %>
-    
+
+        <div class="container">
+            <div class="row justify-content-center top-buffer">
+                <div class="col-12 col-md-3">
+                    <div class="card px-2">
+                        <h2 class="text-center">Filtrar por:</h2>
+                        <hr>
+                        <h4>Precio:</h4>
+                        <div class="card-body">
+                            <form id="price-range-form">
+                                <label for="min-price" class="form-label">Precio minimo: </label>
+                                <span id="min-price-txt">0€</span>
+                                <input type="range" class="form-range" min="0" max="99" id="min-price" step="1"
+                                    value="0">
+                                <label for="max-price" class="form-label">Precio maximo: </label>
+                                <span id="max-price-txt">100€</span>
+                                <input type="range" class="form-range" min="1" max="100" id="max-price" step="1"
+                                    value="100">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
             <div class="row justify-content-center top-buffer">
                 <% data.forEach(function(producto){ %>
