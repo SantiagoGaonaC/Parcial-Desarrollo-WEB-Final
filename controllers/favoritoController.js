@@ -20,13 +20,13 @@ module.exports.registrarPedido = (req, res) => {
           comprador.id,
           idProducto
         ]);
-        res.redirect("/");
+        res.redirect("/favoritos");
       } else {
         db.all("DELETE FROM favoritos WHERE favorito = ? and usuario = ?", [
           idProducto,
           comprador.id
         ]);
-        res.redirect("/");
+        res.redirect("/favoritos");
       }
       /*
       console.log(error);
@@ -56,14 +56,13 @@ module.exports.mostrarFavoritos = (req, res) => {
           var row = results[key];
           data.forEach((producto) => {
             if (producto.id == row.favorito) {
-
               favoritos.push(producto);
               console.log(favoritos);
             }
           });
         });
         res.render("favoritos.ejs", {
-          data:favoritos,
+          data: favoritos,
           carrito,
           total
         });
